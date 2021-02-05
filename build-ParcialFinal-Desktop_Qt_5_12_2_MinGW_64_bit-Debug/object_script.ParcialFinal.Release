@@ -1,0 +1,10 @@
+release/bala.o
+release/main.o
+release/mainwindow.o
+release/principal.o
+release/simulacion.o
+release/qrc_recursos.o
+release/moc_bala.o
+release/moc_mainwindow.o
+release/moc_principal.o
+release/moc_simulacion.o
