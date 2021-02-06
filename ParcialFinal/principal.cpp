@@ -23,12 +23,11 @@ void Principal::on_pushButton_clicked()
 
     int dat=Disparo_Ofensivo(yo,yd,xo,xd);
 
-    qDebug() <<"Retorno: "<<dat;
     tvo=dat%1000;
     dat/=1000;
     angulo1=dat%1000;
     vo=dat/1000;
-    qDebug() <<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
+
     if(dat!=0){
         this->hide();
         simulation =new simulacion(yo,yd,xd,angulo1,vo,tvo,1,0,0,0,0,0,0);
@@ -45,21 +44,17 @@ void Principal::on_pushButton_2_clicked()
     tvo=1;
 
     int dat = Disparo_Ofensivo(yo,yd,xo,xd);
-    qDebug() <<"Retorno: "<<dat;
+
     tvo=dat%1000;
     dat/=1000;
     angulo1=dat%1000;
     vo=dat/1000;
-
-    qDebug() <<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
 
     int dat2 = Disparo_DfensivoAtt(yo,yd,xo,xd);
     tvd=dat2%1000;
     dat2/=1000;
     angulo2=dat2%1000;
     vd=dat2/1000;
-
-    qDebug() <<" angulo: "<<angulo2<<" velocidad: "<<vd<<" Tvd: "<<tvd;
 
     if(dat!=0){
         this->hide();
@@ -79,13 +74,10 @@ void Principal::on_pushButton_3_clicked()
 
     int dat = Disparo_Ofensivo(yo,yd,xo,xd);
 
-    qDebug() <<"Retorno: "<<dat;
     tvo=dat%1000;
     dat/=1000;
     angulo1=dat%1000;
     vo=dat/1000;
-
-    qDebug() <<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
 
     int dat2 = Disparo_Defensivo(yo,yd,xo,xd,1);
     tvd=dat2%1000;
@@ -93,7 +85,6 @@ void Principal::on_pushButton_3_clicked()
     angulo2=dat2%1000;
     vd=dat2/1000;
 
-    qDebug() <<" angulo: "<<angulo2<<" velocidad: "<<vd<<" Tvd: "<<tvd;
     if(dat!=0){
         this->hide();
         simulation =new simulacion(yo,yd,xd,angulo1,vo,tvo,3,angulo2,vd,tvd,0,0,0);
@@ -111,13 +102,10 @@ void Principal::on_pushButton_4_clicked()
 
     int dat = Disparo_Ofensivo(yo,yd,xo,xd);
 
-    qDebug() <<"Retorno: "<<dat;
     tvo=dat%1000;
     dat/=1000;
     angulo1=dat%1000;
     vo=dat/1000;
-
-    qDebug() <<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
 
     int dat2 = Disparo_Defensivo(yo,yd,xo,xd,2);
     tvd=dat2%1000;
@@ -125,7 +113,6 @@ void Principal::on_pushButton_4_clicked()
     angulo2=dat2%1000;
     vd=dat2/1000;
 
-    qDebug() <<" angulo: "<<angulo2<<" velocidad: "<<vd<<" Tvd: "<<tvd;
     if(dat!=0){
         this->hide();
         simulation =new simulacion(yo,yd,xd,angulo1,vo,tvo,3,angulo2,vd,tvd,0,0,0);
@@ -143,13 +130,10 @@ void Principal::on_pushButton_5_clicked()
 
     int dat = Disparo_Ofensivo(yo,yd,xo,xd);
 
-    qDebug() <<"Retorno: "<<dat;
     tvo=dat%1000;
     dat/=1000;
     angulo1=dat%1000;
     vo=dat/1000;
-
-    qDebug() <<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
 
     int dat2 = Disparo_Defensivo(yo,yd,xo,xd,1);
     tvd=dat2%1000;
@@ -162,9 +146,6 @@ void Principal::on_pushButton_5_clicked()
     dat3/=1000;
     angulo3=dat3%1000;
     vc=dat3/1000;
-    qDebug() <<" angulo: "<<angulo3<<" velocidad: "<<vc<<" Tvc: "<<tvc;
-
-    //qDebug() <<" angulo: "<<angulo2<<" velocidad: "<<vd<<" Tvd: "<<tvd;
     if(dat!=0){
         this->hide();
         simulation =new simulacion(yo,yd,xd,angulo1,vo,tvo,4,angulo2,vd,tvd,angulo3,vc,tvc);
@@ -182,7 +163,6 @@ int Principal::Disparo_Ofensivo(int yo_,int yd_,int xo_,int xd_)
     int Xd=xd_;
     double ao;
 
-    qDebug() << " "<<yo<< " "<<xo<< " "<<yd<< " "<<xd;
     float vox,voy;
     float x, y;
 
@@ -193,27 +173,21 @@ int Principal::Disparo_Ofensivo(int yo_,int yd_,int xo_,int xd_)
     for (int j=0;j<90;j++){
         int i = rand () % (90-0+1) + 0;
         ao=i*pi/180;
-        //if(resp==true) break;
         for(int v = 0;v < 150; v+=2){
             vox=v*cos(ao);
             voy=v*sin(ao);
-            //if(resp==true) break;
             for(int t=12;t<50;t++){
                 x=Xo+vox*t;
                 y=Yo+voy*t-0.5*9.8*t*t;
                 if(y<0) break;
-                //if(resp==true) break;
                 if(sqrt(pow((x-Xd),2)+pow((y-Yd),2))<=(0.05*Xd)+25){
-                    qDebug()<<"angulo de riezgo "<<i<<" y velocidad: "<<v<<"Tiempo de vuelo: "<<t;
                     QMessageBox::information(this,"Datos del disparo","Angulo: "+QString::number(i)+" Velocidad inicial: "+QString::number(v)+" Tiempo de vuelo: "+QString::number(t));
-                    //return ;
+
                     resp=true;
                     return (((v*1000)+i)*1000)+t;
                 }
             }
         }
-        //qDebug () <<angulo1;
-
     }
     if(resp==false){
         QMessageBox::information(this,"Datos del disparo","No se encontró un disparo certero");
@@ -230,7 +204,6 @@ int Principal::Disparo_DfensivoAtt(int yo_, int yd_, int xo_, int xd_)
     int Xd=xd_;
     double ad;
 
-    qDebug() << " "<<yo<< " "<<xo<< " "<<yd<< " "<<xd;
     float vdx,vdy;
     float x, y;
 
@@ -241,28 +214,20 @@ int Principal::Disparo_DfensivoAtt(int yo_, int yd_, int xo_, int xd_)
     for (int j=0;j<90;j++){
         int i = rand () % (90-0+1) + 0;
         ad=i*pi/180;
-        //if(resp==true) break;
         for(int v = 0;v < 150; v+=2){
             vdx=-v*cos(ad);
             vdy=v*sin(ad);
-            //if(resp==true) break;
             for(int t=0;t<50;t++){
                 x=Xd+vdx*t;
                 y=Yd+vdy*t-0.5*9.8*t*t;
                 if(y<0) break;
-                //if(resp==true) break;
                 if(sqrt(pow((x-Xo),2)+pow((y-Yo),2))<=(0.025*Xd)+25){
-                    qDebug()<<"angulo de riezgo "<<i<<" y velocidad: "<<v<<"Tiempo de vuelo: "<<t;
-                    qDebug()<<"x: "<<x<<" y: "<<y<<" Xo: "<<Xo<<" Yo: "<<Yo<<" radio: "<<sqrt(pow((x-Xo),2)+pow((y-Yo),2));
                     QMessageBox::information(this,"Datos del disparo","Angulo: "+QString::number(i)+" Velocidad inicial: "+QString::number(v)+" Tiempo de vuelo: "+QString::number(t));
-                    //return ;
                     resp=true;
                     return (((v*1000)+i)*1000)+t;
                 }
             }
         }
-        //qDebug () <<angulo1;
-
     }
     if(resp==false){
         QMessageBox::information(this,"Datos del disparo","No se encontró un disparo certero");
@@ -285,7 +250,6 @@ int Principal::Disparo_Defensivo(int yo_, int yd_, int xo_, int xd_, int caso_)
     float vox=vo*cos(ao);
     float voy=vo*sin(ao);
 
-    qDebug() << " "<<yo<< " "<<xo<< " "<<yd<< " "<<xd;
     float vdx,vdy;
     float _xd=Xd,_yd=Yd,_xo,_yo;
 
@@ -307,20 +271,14 @@ int Principal::Disparo_Defensivo(int yo_, int yd_, int xo_, int xd_, int caso_)
                 if(_yd<0) break;
                 if (caso==1){
                     if(sqrt(pow((_xo-_xd),2)+pow((_yo-_yd),2))<=0.025*Xd && sqrt(pow((xo_-Xd),2)+pow((yo_-Yd),2))>=(0.05*Xd)+25){
-                        qDebug()<<"angulo efectivo "<<i<<" y velocidad: "<<v<<"Tiempo de vuelo: "<<t<<" Xd: "<<Xd<<" radio: "<<sqrt(pow((xo-xd),2)+pow((yo-yd),2));
-                        qDebug()<<"xo: "<<_xo<<" yo: "<<_yo<<" xd: "<<_xd<<" yd: "<<_yd;
                         QMessageBox::information(this,"Datos del disparo","angulo efectivo: "+QString::number(i)+" Velocidad inicial: "+QString::number(v)+" Tiempo de vuelo: "+QString::number(t));
-                        //return ;
                         resp=true;
                         return (((v*1000)+i)*1000)+t;
                     }
                 }
                 else if(caso==2){
                     if(sqrt(pow((_xo-_xd),2)+pow((_yo-_yd),2))<=0.025*Xd && sqrt(pow((xo_-Xd),2)+pow((yo_-Yd),2))>=(0.05*Xd)+25 && sqrt(pow((xd_-Xo),2)+pow((yd_-Yo),2))>=(0.025*Xd)+25){
-                        qDebug()<<"angulo efectivo "<<i<<" y velocidad: "<<v<<"Tiempo de vuelo: "<<t<<" Xd: "<<Xd<<" radio: "<<sqrt(pow((xo-xd),2)+pow((yo-yd),2));
-                        qDebug()<<"xo: "<<_xo<<" yo: "<<_yo<<" xd: "<<_xd<<" yd: "<<_yd;
                         QMessageBox::information(this,"Datos del disparo","angulo efectivo: "+QString::number(i)+" Velocidad inicial: "+QString::number(v)+" Tiempo de vuelo: "+QString::number(t));
-                        //return ;
                         resp=true;
                         return (((v*1000)+i)*1000)+t;
                     }
@@ -332,7 +290,6 @@ int Principal::Disparo_Defensivo(int yo_, int yd_, int xo_, int xd_, int caso_)
     if(resp==false){
         QMessageBox::information(this,"Datos del disparo","No se encontró un disparo certero");
     }
-    //qDebug () << "En disparo defensivo: "<<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
     return 0;
 }
 
@@ -350,7 +307,6 @@ int Principal::Disparo_ContraAtaque(int yo_, int yd_, int xo_, int xd_)
     float vdx=vd*cos(ad);
     float vdy=vd*sin(ad);
 
-    qDebug() << " "<<yo<< " "<<xo<< " "<<yd<< " "<<xd;
     float vcx,vcy;
     float _xc=Xo,_yc=Yo,_xd,_yd;
 
@@ -358,7 +314,6 @@ int Principal::Disparo_ContraAtaque(int yo_, int yd_, int xo_, int xd_)
     //srand(time(NULL));
 
     for (int j=0;j<90;j++){
-        //int i = rand () % (90-0+1) + 0;
         ac=j*pi/180;
         for(int v = 100;v < 300; v+=2){
             vcx=v*cos(ac);
@@ -369,12 +324,8 @@ int Principal::Disparo_ContraAtaque(int yo_, int yd_, int xo_, int xd_)
                 _xc=Xo+vcx*(t-1);
                 _yc=Yo+vcy*(t-1)-0.5*9.8*(t-1)*(t-1);
                 if(_yc<0) break;
-                //qDebug()<<sqrt(pow((_xc-_xd),2)+pow((_yc-_yd),2));
                 if(sqrt(pow((_xc-_xd),2)+pow((_yc-_yd),2))<=0.005*Xd){
-                    qDebug()<<"angulo efectivo "<<j<<" y velocidad: "<<v<<"Tiempo de vuelo: "<<t<<" Xd: "<<Xd<<" radio: "<<sqrt(pow((xo-xd),2)+pow((yo-yd),2));
-                    qDebug()<<"xc: "<<_xc<<" yc: "<<_yc<<" xd: "<<_xd<<" yd: "<<_yd;
                     QMessageBox::information(this,"Datos del disparo","angulo efectivo: "+QString::number(j)+" Velocidad inicial: "+QString::number(v)+" Tiempo de vuelo: "+QString::number(t));
-                    //return ;
                     resp=true;
                     return (((v*1000)+j)*1000)+t;
 
@@ -386,6 +337,5 @@ int Principal::Disparo_ContraAtaque(int yo_, int yd_, int xo_, int xd_)
     if(resp==false){
         QMessageBox::information(this,"Datos del disparo","No se encontró un disparo certero");
     }
-    //qDebug () << "En disparo defensivo: "<<" angulo: "<<angulo1<<" velocidad: "<<vo<<" Tvo: "<<tvo;
     return 0;
 }
