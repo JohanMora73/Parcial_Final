@@ -87,7 +87,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>600</number>
+     <number>500</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="yd1">
@@ -100,7 +100,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>600</number>
+     <number>500</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="dist1">

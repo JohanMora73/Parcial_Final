@@ -68,11 +68,11 @@ public:
         yo1 = new QSpinBox(centralwidget);
         yo1->setObjectName(QString::fromUtf8("yo1"));
         yo1->setGeometry(QRect(70, 60, 91, 22));
-        yo1->setMaximum(600);
+        yo1->setMaximum(500);
         yd1 = new QSpinBox(centralwidget);
         yd1->setObjectName(QString::fromUtf8("yd1"));
         yd1->setGeometry(QRect(70, 140, 91, 22));
-        yd1->setMaximum(600);
+        yd1->setMaximum(500);
         dist1 = new QSpinBox(centralwidget);
         dist1->setObjectName(QString::fromUtf8("dist1"));
         dist1->setGeometry(QRect(70, 230, 91, 22));
