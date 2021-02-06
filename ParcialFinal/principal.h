@@ -29,26 +29,31 @@ public:
     /*variables implementadas para la verificacion*/
     double pi=3.14159265;
 
-    double angulo3;
-
     //posiciones iniciales
     int xo;
     int yo;
     int xd;
     int yd;
 
-    //datos de los diaparos
+    //datos del diaparo ofensivo
     double angulo1;
     int vo;
     int tvo;
 
+    //datos del diaparo defensivo
     double angulo2;
-    int tvd;
     int vd;
+    int tvd;
+
+    //datos del diaparo de contraataque
+    double angulo3;
+    int vc;
+    int tvc;
 
     int Disparo_Ofensivo(int yo_,int yd_,int xo_,int xd_);
     int Disparo_DfensivoAtt(int yo_,int yd_,int xo_,int xd_);
     int Disparo_Defensivo(int yo_,int yd_,int xo_,int xd_, int caso);
+    int Disparo_ContraAtaque(int yo_,int yd_,int xo_,int xd_);
 
 
 private slots:
@@ -57,6 +62,10 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::Principal *ui;

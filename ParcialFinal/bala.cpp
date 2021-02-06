@@ -1,4 +1,4 @@
-#include "bala.h"
+﻿#include "bala.h"
 //#include "principal.h"
 
 //extern Principal *InterfazInicial;
@@ -73,6 +73,9 @@ void bala::DisparoOfensivo()
         qDebug() <<"Asies, trastro && t "<<Trastro<<t;
         t+=Trastro;
         scene()->addEllipse(NuevoEjeXext(x,radio),NuevoEjeYext(y,radio),2*radio,2*radio);
+        if(radio>10){
+            scene()->addEllipse(NuevoEjeXext(x,10),NuevoEjeYext(y,10),2*10,2*10)->setBrush(Qt::yellow);
+        }
     }
     dt+=0.05;
 
@@ -103,6 +106,7 @@ void bala::DisparoDefensivo()
         qDebug() <<"Asies, trastro && t "<<Trastro<<t;
         t+=Trastro;
         scene()->addEllipse(NuevoEjeXext(x,radio),NuevoEjeYext(y,radio),2*radio,2*radio);
+        if(radio>10)scene()->addEllipse(NuevoEjeXext(x,10),NuevoEjeYext(y,10),2*10,2*10)->setBrush(Qt::blue);
     }
     dt+=0.05;
 }
