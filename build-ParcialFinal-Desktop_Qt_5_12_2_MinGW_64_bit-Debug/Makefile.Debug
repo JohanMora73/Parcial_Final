@@ -182,7 +182,7 @@ debug/moc_bala.cpp: ../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtguiglobal.h \
@@ -234,6 +234,7 @@ debug/moc_bala.cpp: ../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include "D:/semestre4/Informática 2/ParcialFinal/build-ParcialFinal-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -I"D:/semestre4/Informática 2/ParcialFinal/ParcialFinal" -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtMultimedia -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtNetwork -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\ParcialFinal\bala.h -o debug\moc_bala.cpp
@@ -357,7 +358,7 @@ debug/moc_mainwindow.cpp: ../ParcialFinal/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -487,7 +488,7 @@ debug/moc_principal.cpp: ../ParcialFinal/principal.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -613,7 +614,7 @@ debug/moc_simulacion.cpp: ../ParcialFinal/simulacion.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -703,7 +704,7 @@ debug/bala.o: ../ParcialFinal/bala.cpp ../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtguiglobal.h \
@@ -754,7 +755,8 @@ debug/bala.o: ../ParcialFinal/bala.cpp ../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtimer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasictimer.h
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\bala.o ..\ParcialFinal\bala.cpp
 
 debug/main.o: ../ParcialFinal/main.cpp ../ParcialFinal/mainwindow.h \
@@ -876,7 +878,7 @@ debug/main.o: ../ParcialFinal/main.cpp ../ParcialFinal/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -1012,7 +1014,7 @@ debug/mainwindow.o: ../ParcialFinal/mainwindow.cpp ../ParcialFinal/mainwindow.h 
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -1140,7 +1142,7 @@ debug/principal.o: ../ParcialFinal/principal.cpp ../ParcialFinal/principal.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
@@ -1295,7 +1297,7 @@ debug/simulacion.o: ../ParcialFinal/simulacion.cpp ../ParcialFinal/simulacion.h 
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		../ParcialFinal/bala.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \

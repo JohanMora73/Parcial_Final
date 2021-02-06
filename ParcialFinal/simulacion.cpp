@@ -2,7 +2,7 @@
 #include "ui_simulacion.h"
 #include "principal.h"
 
-simulacion::simulacion(int yo_,int yd_,int xd_,int ao_,int vo_,QWidget *parent) :
+simulacion::simulacion(int yo_,int yd_,int xd_,int ao_,int vo_,int tvo_,int caso_,int ad_,int vd_,int tvd_,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::simulacion)
 {
@@ -12,20 +12,42 @@ simulacion::simulacion(int yo_,int yd_,int xd_,int ao_,int vo_,QWidget *parent) 
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    caso=caso_;
+
     yo=yo_;
     yd=yd_;
     xd=xd_;
     ao=ao_;
     vo=vo_;
-    simulacion_1();
-    //QLine *line = new QLine();
-    //scene->addItem(line);
-    //(x1,y1,x2,y2);
+    tvo=tvo_;
+
+    ad=ad_;
+    vd=vd_;
+    tvd=tvd_;
+
+    //Ejes cartesianos y soportes
     scene->addLine(100,600,1350,600);
     scene->addLine(100,600,100,0);
-    scene->addRect(50,610-yo,100,yo-10)->setBrush(Qt::gray);
-    scene->addRect(xd-50,610-yd,100,yd-10)->setBrush(Qt::gray);
+    scene->addRect(50,625-yo,100,yo-25)->setBrush(Qt::green);
+    scene->addRect(xd+50,625-yd,100,yd-25)->setBrush(Qt::green);
+    //punto de referencia del canion defensivo y ofensivo
+    scene->addEllipse(xd+75,575-yd,50,50)->setBrush(Qt::gray);
+    scene->addEllipse(75,575-yo,50,50)->setBrush(Qt::gray);
 
+    if (caso ==1) simulacion_1();
+    if(caso==2){
+        simulacion_2();
+        TDealy2s = new QTimer();
+        QObject::connect(TDealy2s,SIGNAL(timeout()),this,SLOT(Delay2s()));
+        TDealy2s->start(20);
+    }
+    if(caso==3){
+        simulacion_3();
+        TDealy2s = new QTimer();
+        QObject::connect(TDealy2s,SIGNAL(timeout()),this,SLOT(Delay2s()));
+        TDealy2s->start(20);
+    }
 }
 
 simulacion::~simulacion()
@@ -33,22 +55,37 @@ simulacion::~simulacion()
     delete ui;
 }
 
-float simulacion::DefinnicionEjeY(float posy_)
-{
-    return 600+10-posy_;
-}
-
-float simulacion::DefinnicionEjeX(float posx_)
-{
-    return 100-10+posx_;
-}
-
 void simulacion::simulacion_1()
 {
     qDebug() <<"si";
-    bo = new bala(xo,yo,10,vo,ao);
+    bo = new bala(xo,yo,0.05*xd,vo,ao,tvo);
+    scene->addItem(bo);
+}
+
+void simulacion::simulacion_2()
+{
+    bo = new bala(xo,yo,0.05*xd,vo,ao,tvo);
     scene->addItem(bo);
 
+    bd = new bala(xd,yd,0.025*xd,vd,ad,tvd);
+    scene->addItem(bd);
+}
+
+void simulacion::simulacion_3()
+{
+    bo = new bala(xo,yo,0.05*xd,vo,ao,tvd);
+    scene->addItem(bo);
+
+    bd = new bala(xd,yd,0.025*xd,vd,ad,tvd-2);
+    scene->addItem(bd);
+}
+
+void simulacion::Delay2s()
+{
+    if(bo->dt>=2){
+        bd->TDefensivo->start(20);
+        TDealy2s->stop();
+    }
 }
 
 void simulacion::on_pushButton_clicked()
@@ -61,5 +98,5 @@ void simulacion::on_pushButton_clicked()
 
 void simulacion::on_pushButton_2_clicked()
 {
-    bo->TOfensivo->start(100);
+    bo->TOfensivo->start(20);
 }
